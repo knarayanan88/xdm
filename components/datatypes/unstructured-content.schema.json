@@ -10,10 +10,15 @@
   "title": "Unstructured Content",
   "type": "object",
   "meta:extensible": true,
-  "description": "A minimal, reusable shape carrying extracted free-text content, such as a note, review, or message body. Lineage (source dataset, batch id, ingestion timestamp, extraction pipeline version) is intentionally not modeled here — it is covered by standard Catalog/batch metadata.",
+  "description": "A minimal, reusable shape carrying an identity and extracted free-text content, such as a note, review, or message body. Lineage (source dataset, batch id, ingestion timestamp, extraction pipeline version) is intentionally not modeled here — it is covered by standard Catalog/batch metadata.",
   "definitions": {
     "unstructured-content": {
       "properties": {
+        "xdm:identity": {
+          "title": "Identity",
+          "type": "string",
+          "description": "The identity associated with the unstructured content."
+        },
         "xdm:rawText": {
           "title": "Raw Text",
           "type": "string",
